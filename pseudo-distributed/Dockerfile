@@ -13,6 +13,8 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
 ENV HADOOP_HOME /root/hadoop-2.8.1
 ENV PATH $PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
 
+RUN echo "Host *\nStrictHostKeyChecking no\nUserKnownHostsFile=/dev/null" > /root/.ssh/config
+
 ADD  http://apache.cs.utah.edu/hadoop/common/hadoop-2.8.1/hadoop-2.8.1.tar.gz /root
 
 COPY ./hadoop_conf/* $HADOOP_HOME/etc/hadoop/
@@ -22,7 +24,7 @@ RUN hdfs namenode -format
 COPY ./start.sh /root/
 RUN chmod +x /root/start.sh
 
-ENTRYPOINT /root/start.sh && /bin/bash
+RUN /root/start.sh
 
 #RUN start-dfs.sh
 #RUN service ssh start
