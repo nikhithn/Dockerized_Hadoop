@@ -19,9 +19,10 @@ COPY ./hadoop_conf/* $HADOOP_HOME/etc/hadoop/
 
 RUN hdfs namenode -format
 
-ADD ./start.sh /root/
+COPY ./start.sh /root/
+RUN chmod +x /root/start.sh
 
-CMD /root/start.sh
+ENTRYPOINT /root/start.sh && /bin/bash
 
 #RUN start-dfs.sh
 #RUN service ssh start
