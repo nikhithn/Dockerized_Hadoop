@@ -24,7 +24,7 @@ RUN hdfs namenode -format
 COPY ./start.sh /root/
 RUN chmod +x /root/start.sh
 
-RUN /root/start.sh
+ENTRYPOINT /root/start.sh && /bin/bash
 
 #RUN start-dfs.sh
 #RUN service ssh start
