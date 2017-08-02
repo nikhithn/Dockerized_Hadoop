@@ -12,7 +12,16 @@ RUN ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64/
-ENV HADOOP_HOME /root/sw/hadoop-2.8.1
+ENV HADOOP_HOME /root/hadoop-2.8.1
 ENV PATH $PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+COPY ./hadoop_conf/* $HADOOP_HOME/etc/hadoop/
+
+RUN service ssh start
+
+RUN hdfs namenode -format
+RUN start-dfs.sh
+RUN start-yarn.sh
+RUN mr-jobhistory-daemon.sh start historyserver
 
 
