@@ -24,6 +24,8 @@ RUN hdfs namenode -format
 COPY ./start.sh /root/
 RUN chmod +x /root/start.sh
 
+EXPOSE 8020 50070 50010 50075 50020 37401 50090 8030 8031 8032 8033 8088 13562 44950 8040 8042 10020 10033 19888
+
 ENTRYPOINT /root/start.sh && /bin/bash
 
 #RUN start-dfs.sh
