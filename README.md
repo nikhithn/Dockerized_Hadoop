@@ -12,10 +12,10 @@ There are two dockerfiles:
 # Use
 
 In order to run the first two deployment models, you can clone this repository and then run:    
-'''
+```
 docker build -t hadoop [path to repository]/[pseudo-distributed or standalone]/    
 docker run -it hadoop   
-'''
+```
 
 You can also pull the docker image for the pseudo-distributed model from nikhithn/hadoop with the below command   
 docker pull nikhithn/hadoop   
