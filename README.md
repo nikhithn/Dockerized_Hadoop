@@ -30,3 +30,4 @@ If you want to access hadoop from your host, don't forget to map your ports and 
 ```
 docker run -it -p 50070 nikhithn/hadoop
 ```
+Then you will have to run ```docker ps``` to see what port on your docker machine you can use to access the process running on 50070 in your container.  
