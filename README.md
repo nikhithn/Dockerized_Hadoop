@@ -18,7 +18,10 @@ docker run -it hadoop
 ```
 
 You can also pull the docker image for the pseudo-distributed model from nikhithn/hadoop with the below command   
+```
 docker pull nikhithn/hadoop   
+```
 And then run it with   
+```
 docker run -it nikhithn/hadoop   
-
+```
