@@ -9,7 +9,7 @@ There are two dockerfiles:
 
 3. (In Progress) The Distributed deployment, which would simulate a multi-node Hadoop deployment by creating separate containers for individual node types.  Then swarm, kubernetes (or even possibly docker compose) could be used to deploy a more realistic distributed Hadoop cluster on a single machine. 
 
-# Use
+## Use
 
 In order to run the first two deployment models, you can clone this repository and then run:    
 ```
