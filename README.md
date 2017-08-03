@@ -25,3 +25,8 @@ And then run it with
 ```
 docker run -it nikhithn/hadoop   
 ```
+
+If you want to access hadoop from your host, don't forget to map your ports and add a -p to your command, e.g.
+````
+docker run -it -p 50070 nikhithn/hadoop
+```
